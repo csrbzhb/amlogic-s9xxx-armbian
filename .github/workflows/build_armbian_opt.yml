@@ -83,7 +83,7 @@ jobs:
           if  [[ -z "${set_armbian_ver}" ]]; then
               set_armbian_ver="master"
           fi
-#         echo "ARMBIAN_BRANCH=${set_branch}" >> $GITHUB_ENV
+          echo "ARMBIAN_VER=${set_armbian_ver}" >> $GITHUB_ENV
           
           ARR_BRANCH=("edge" "current" "legacy")
           set_branch="${{ github.event.inputs.set_branch }}"
