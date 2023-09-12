@@ -264,16 +264,9 @@ jobs:
         if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           tag: ${{ steps.clean.outputs.build_tag }}
-          artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
+          artifacts: build/output/images/*
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
-          body: |
-            These are the Armbian OS image
-            * OS information
-            Default username: root
-            Default password: 1234
-            Install command: armbian-install
-            Update command: armbian-update
 
       - name: Rebuild Armbian
         uses: csrbzhb/amlogic-s9xxx-armbian@rk
